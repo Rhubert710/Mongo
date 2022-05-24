@@ -1,0 +1,12 @@
+const newBlog = 
+    {
+      createdAt: "2022-05-24T10:36:37.176Z",
+      title: "Robs Post",
+      text: "Iusto et in et. Nulla accusantium fugit. Et qui dolorem inventore soluta et veritatis. Aut ut aut non laudantium eveniet suscipit odit. Sapiente sint nihil nihil sit et molestias. In nisi omnis quas et sed aut minus aperiam ea.\n \rLaudantium quo quisquam quae. Et et quas officia perspiciatis iusto sunt sunt eaque. Quidem sit voluptas deserunt sequi magni.\n \rEst est facere cumque ipsam omnis animi. Voluptatem magnam officiis architecto possimus. Quia similique aut eos qui. Quasi quae sed aliquam.",
+      author: "Robert",
+      id: "10"
+    };
+// db.posts.insertOne(newBlog);
+// db.posts.find({author:'Robert'});
+// db.posts.updateOne({author:'Robert'},{$set:{title:'new Title!'}});
+// db.posts.deleteOne({title:'new Title!'});
