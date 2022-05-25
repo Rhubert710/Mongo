@@ -1,0 +1,25 @@
+function getPosts(limit=0 , page =0, sortField, sortOrder =1, filterField, filterValue )
+{
+    let findParams ={};
+    let sortParams ={};
+    
+    if (filterField)
+    {
+        findParams = {filterField:filterValue}
+    }
+    
+    if (sortParams)
+    {
+        sortParams= {sortField:sortOrder}
+    }
+    
+    const dbResult = db.posts.find(findParams)
+        .skip(page)
+        .sort(sortParams)
+        .limit(limit)
+       
+      
+      return dbResult;
+}
+
+getPosts();
