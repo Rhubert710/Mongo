@@ -1,0 +1,57 @@
+//FIND POST
+function findPost(blogId)
+{
+    return db.posts.find({'id':blogId})
+}
+
+
+//GET POST COLLECTION LENGTH
+function getPostsCollectionLength()
+{
+    return db.posts.count();
+}
+
+
+//MAKE POST
+function makePost(title, text, author, category, blogId=0)
+{
+    return db.posts.insertOne({
+        'blogId':blogId,
+        'title':title,
+        'text':text,
+        'author':author,
+        'category':category,
+        'createdAt': new Date(),
+          'lastModified': new Date(),
+        'id':getPostsCollectionLength() +1
+    })
+}
+
+
+//UPDATE POST
+function updatePost(id, title, text, author, category)
+{
+    let updatedInfo = {};
+    
+    if(title) updatedInfo['title'] = title;
+    
+    if(text) updatedInfo['text'] = text;
+    
+    if(author) updatedInfo['author'] = author;    
+    
+    if(category) updatedInfo['category'] = category;
+    
+    return db.posts.updateOne({'id':id},{$set:updatedInfo})
+}
+
+//
+
+
+
+
+// findPost(5);
+//  getPostsCollectionLength();
+// updatePost(52, 'updatedTitle', 'updated Text!')
+// db.posts.find({})
+
+// makePost('myTitle', 'myText', 'Robert', 'myCategory');
