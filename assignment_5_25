@@ -44,14 +44,19 @@ function updatePost(id, title, text, author, category)
     return db.posts.updateOne({'id':id},{$set:updatedInfo})
 }
 
-//
+//DELETE POSTS
+function deletePosts(blogIds)
+{
+    return db.posts.deleteMany({ "id": { $in: blogIds }})
+}
 
 
 
 
 // findPost(5);
 //  getPostsCollectionLength();
-// updatePost(52, 'updatedTitle', 'updated Text!')
-// db.posts.find({})
-
 // makePost('myTitle', 'myText', 'Robert', 'myCategory');
+// updatePost(52, 'updatedTitle', 'updated Text!')
+//deletePosts([47,48])
+
+// db.posts.find({})
